@@ -2,6 +2,7 @@ import {useState, useEffect, cache} from 'react'
 import api from "../api.js"
 import {data} from "react-router-dom";
 import "../styles/Home.css"
+import Note from "../components/Note.jsx";
 
 function Home() {
     const [notes, setNotes] = useState([]);
@@ -25,9 +26,9 @@ function Home() {
             .then((res) => {
                 if (res.status === 200) alert("Note deleted successfully.");
                 else alert("Failed to delete note.");
+                getNotes();
             })
             .catch(err => alert(err));
-        getNotes();
     }
 
     const createNote = (e) => {
@@ -37,14 +38,17 @@ function Home() {
             .then((res) => {
                 if (res.status === 200) alert("Note created successfully.");
                 else alert("Failed to create note.");
+                getNotes();
             })
             .catch((err) => alert(err));
-        getNotes();
     }
 
     return <div>
         <div>
             <h2>Notes</h2>
+            {notes.map((note) => (
+                <Note note={note} key={note.id} onDelete={deleteNote} />
+            ))}
 
         </div>
         <h2>Create a Note</h2>
