@@ -1,1 +1,5 @@
 env/
+.env
+backend-config.txt
+db.sqlite3
+# Ignore all .env files in any subdirectory
