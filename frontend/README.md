@@ -13,7 +13,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ---
 
-## 🔙 Frontend Setup (React + Vite)
+## 🔜 Frontend Setup (React + Vite)
 1. **Use Node.js Version 20**
 
 If using NVM:
