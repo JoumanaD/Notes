@@ -1,6 +1,7 @@
 import {useState, useEffect, cache} from 'react'
 import api from "../api.js"
 import {data} from "react-router-dom";
+import "../styles/Home.css"
 
 function Home() {
     const [notes, setNotes] = useState([]);
